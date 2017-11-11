@@ -49,6 +49,7 @@ recognition.onresult = function(event) {
         console.log(deviceResponse);
         insertChat("voka", deviceResponse); 
         deviceResponse = "";
+        console.log("inserted chat");
     }
 
 };
