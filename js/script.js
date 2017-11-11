@@ -48,6 +48,9 @@ recognition.onresult = function(event) {
         deviceResponse += transcript;
     }
 
+    insertChat("voka", deviceResponse); 
+    deviceResponse = "";
+    console.log("inserted chat");
 };
 
 recognition.onstart = function() { 
@@ -95,12 +98,15 @@ function insertChat(who, text, time = 0){
     setTimeout(
         function(){
             if (who == "you") {
-                speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+                utterance = new SpeechSynthesisUtterance(text)
+                speechSynthesis.speak(utterance);
             }                        
             $("ul").append(control);
             $("ul").scrollTop($("ul")[0].scrollHeight);
 
-            recognition.start();
+            utterance.onend = function() {
+                recognition.start();
+            }
 
             console.log(deviceResponse);
             
@@ -120,10 +126,6 @@ $(".mytext").keydown(function(e){
         if (text !== ""){
             insertChat("you", text);              
             $(this).val('');
-
-            insertChat("voka", deviceResponse); 
-            deviceResponse = "";
-            console.log("inserted chat");
         }
         
     }
