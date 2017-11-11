@@ -67,6 +67,8 @@ recognition.onerror = function(event) {
 
 //-- No use time. It is a javaScript effect.
 function insertChat(who, text, time = 0){
+    console.log("Inserting chat");
+
     var control = "";
     var date = formatAMPM(new Date());
     
@@ -118,7 +120,7 @@ $(".mytext").keydown(function(e){
         if (text !== ""){
             insertChat("you", text);              
             $(this).val('');
-            
+
             insertChat("voka", deviceResponse); 
             deviceResponse = "";
             console.log("inserted chat");
