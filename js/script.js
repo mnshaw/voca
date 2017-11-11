@@ -46,10 +46,6 @@ recognition.onresult = function(event) {
 
     if(!mobileRepeatBug) {
         deviceResponse += transcript;
-        console.log(deviceResponse);
-        insertChat("voka", deviceResponse); 
-        deviceResponse = "";
-        console.log("inserted chat");
     }
 
 };
@@ -84,7 +80,7 @@ function insertChat(who, text, time = 0){
                             '</div>' +
                         '</div>' +
                     '</li>';                    
-    }else{
+    } else{
 
         control = '<li style="width:100%;">' +
                         '<div class="msj-rta macro">' +
@@ -103,6 +99,9 @@ function insertChat(who, text, time = 0){
             $("ul").scrollTop($("ul")[0].scrollHeight);
 
             recognition.start();
+
+            console.log(deviceResponse);
+            
         }, time);
     
 }
@@ -119,8 +118,11 @@ $(".mytext").keydown(function(e){
         if (text !== ""){
             insertChat("you", text);              
             $(this).val('');
+            
+            insertChat("voka", deviceResponse); 
+            deviceResponse = "";
+            console.log("inserted chat");
         }
-
         
     }
 });
