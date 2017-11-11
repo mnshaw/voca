@@ -47,7 +47,6 @@ recognition.onresult = function(event) {
     if(!mobileRepeatBug) {
         deviceResponse += transcript;
     }
-
     
 };
 
@@ -56,7 +55,12 @@ recognition.onstart = function() {
 }
 
 recognition.onspeechend = function() {
-    insertChat("voka", deviceResponse); 
+    if (deviceResponse != "") {
+        insertChat("voka", deviceResponse); 
+    } else {
+        insertChat("voka", "I can't hear anything! Try moving closer and repeating the command."); 
+    }
+    
     deviceResponse = "";
     console.log("inserted chat");
     console.log('You were quiet for a while so voice recognition turned itself off.');
