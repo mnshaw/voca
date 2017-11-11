@@ -47,7 +47,10 @@ recognition.onresult = function(event) {
     if(!mobileRepeatBug) {
         deviceResponse += transcript;
         console.log(deviceResponse);
+        insertChat("voka", deviceResponse); 
+        deviceResponse = "";
     }
+
 };
 
 recognition.onstart = function() { 
