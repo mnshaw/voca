@@ -48,9 +48,7 @@ recognition.onresult = function(event) {
         deviceResponse += transcript;
     }
 
-    insertChat("voka", deviceResponse); 
-    deviceResponse = "";
-    console.log("inserted chat");
+    
 };
 
 recognition.onstart = function() { 
@@ -58,6 +56,9 @@ recognition.onstart = function() {
 }
 
 recognition.onspeechend = function() {
+    insertChat("voka", deviceResponse); 
+    deviceResponse = "";
+    console.log("inserted chat");
     console.log('You were quiet for a while so voice recognition turned itself off.');
 }
 
