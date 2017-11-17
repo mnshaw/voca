@@ -30,7 +30,7 @@ catch(e) {
 var deviceResponse = "";
 
 recognition.onresult = function(event) {
-
+    console.log("onresult");
     // event is a SpeechRecognitionEvent object.
     // It holds all the lines we have captured so far. 
     // We only need the current one.
@@ -47,26 +47,20 @@ recognition.onresult = function(event) {
     if(!mobileRepeatBug) {
         deviceResponse += transcript;
     }
-    if (deviceResponse != "") {
-        insertChat("voka", deviceResponse); 
-    }
     
 };
 
 recognition.onstart = function() { 
+    console.log("onstart");
     console.log('Voice recognition activated. Try speaking into the microphone.');
 }
 
 recognition.onspeechend = function() {
-    // if (deviceResponse != "") {
-    //     insertChat("voka", deviceResponse); 
-    // } else {
-    //     insertChat("voka", "I can't hear anything! Try moving closer and repeating the command."); 
-    // }
+    console.log("onspeechend");
+    if (deviceResponse != "") {
+        insertChat("voka", deviceResponse); 
+    } 
     
-    if (deviceResponse == "") {
-        insertChat("voka", "I can't hear anything! Try moving closer and repeating the command."); 
-    }
     deviceResponse = "";
     console.log("inserted chat");
     console.log('You were quiet for a while so voice recognition turned itself off.');
@@ -74,6 +68,7 @@ recognition.onspeechend = function() {
 
 recognition.onerror = function(event) {
     if(event.error == 'no-speech') {
+        insertChat("voka", "I can't hear anything! Try moving closer and repeating the command."); 
         console.log('No speech was detected. Try again.');  
     };
 }
@@ -81,8 +76,6 @@ recognition.onerror = function(event) {
 
 //-- No use time. It is a javaScript effect.
 function insertChat(who, text, time = 0){
-    console.log("Inserting chat");
-
     var control = "";
     var date = formatAMPM(new Date());
     
@@ -132,7 +125,6 @@ function resetChat(){
 
 $(".mytext").keydown(function(e){
     if (e.keyCode == 13){
-        console.log("hi");
         var text = $(this).val();
         if (text !== ""){
             insertChat("you", text);              
