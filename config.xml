@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.voka" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Voka</name>
+    <description>
+        A blank PhoneGap app.
+    </description>
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <engine name="browser" spec="~5.0.1" />
+    <engine name="ios" spec="~4.5.3" />
+    <plugin name="phonegap-plugin-speech-recognition" spec="https://github.com/macdonst/SpeechRecognitionPlugin">
+        <variable name="MICROPHONE_USAGE_DESCRIPTION" value="Listening to speech controlled device feedback" />
+    </plugin>
+</widget>

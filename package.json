@@ -1,0 +1,21 @@
+{
+  "name": "com.phonegap.voka",
+  "version": "1.0.0",
+  "displayName": "Voka",
+  "cordova": {
+    "platforms": [
+      "browser",
+      "ios"
+    ],
+    "plugins": {
+      "phonegap-plugin-speech-recognition": {
+        "MICROPHONE_USAGE_DESCRIPTION": "Listening to speech controlled device feedback"
+      }
+    }
+  },
+  "dependencies": {
+    "cordova-browser": "~5.0.1",
+    "phonegap-plugin-speech-recognition": "https://github.com/macdonst/SpeechRecognitionPlugin",
+    "cordova-ios": "~4.5.3"
+  }
+}

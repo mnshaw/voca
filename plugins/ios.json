@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "phonegap-plugin-speech-recognition": {
+      "MICROPHONE_USAGE_DESCRIPTION": "Listening to speech controlled device feedback",
+      "SPEECH_RECOGNITION_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.phonegap.voka"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.phonegap.voka"
+    }
+  }
+}
