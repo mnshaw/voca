@@ -61,7 +61,9 @@ recognition.onstart = function() {
 
 recognition.onspeechend = function() {
     console.log("onspeechend");
-    
+    if (deviceResponse == "") {
+        insertChat("voka", "I can't hear anything! Try moving closer and repeating the command.");
+    }
     deviceResponse = "";
     console.log('You were quiet for a while so voice recognition turned itself off.');
 }
