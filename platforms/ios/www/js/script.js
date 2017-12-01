@@ -164,6 +164,7 @@ $(document).ready(function() {
     });
 
     $(".send").click(function() {
+        alert("send pressed");
         var text = $(".mytext").val();
         if (text !== ""){
             insertChat("you", text);              
@@ -186,11 +187,6 @@ $(document).ready(function() {
 
     // -- Print Messages
     // insertChat("voka", "Hello Tom...", 0);  
-    // insertChat("you", "Hi, Pablo", 1500);
-    // insertChat("voka", "What would you like to talk about today?", 3500);
-    // insertChat("you", "Tell me a joke",7000);
-    // insertChat("voka", "Spaceman: Computer! Computer! Do we bring battery?!", 9500);
-    // insertChat("you", "LOL", 12000);
 
 
 })
