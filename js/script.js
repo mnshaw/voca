@@ -144,8 +144,10 @@ $(".mytext").keydown(function(e){
 //     }
 // });
 
-$("#send").on("click touchstart", function() {
+$(".send").click(function() {
     var text = $(".mytext").val();
+
+    $(".mytext").val('');
     if (text !== ""){
         insertChat("you", text);              
         $(".mytext").val('');
