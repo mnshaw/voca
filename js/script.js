@@ -145,6 +145,8 @@ $(".mytext").keydown(function(e){
 // });
 
 $(".send").click(function() {
+    console.log("clicked");
+    
     var text = $(".mytext").val();
 
     $(".mytext").val('');
