@@ -173,16 +173,6 @@ $(document).ready(function() {
         }
     });
 
-    // function send(){ 
-    //     alert("hello");
-
-    //     var text = $(".mytext").val();
-    //     if (text !== ""){
-    //         insertChat("you", text);              
-    //         $(".mytext").val('');
-    //     }
-    // }
-
     //-- Clear Chat
     resetChat();
 
