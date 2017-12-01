@@ -9,6 +9,9 @@
   "installed_plugins": {
     "phonegap-plugin-speech-recognition": {
       "PACKAGE_NAME": "com.phonegap.voka"
+    },
+    "phonegap-plugin-speech-synthesis": {
+      "PACKAGE_NAME": "com.phonegap.voka"
     }
   },
   "dependent_plugins": {

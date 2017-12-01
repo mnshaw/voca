@@ -69,7 +69,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "phonegap-plugin-speech-recognition": "0.2.0",
-    "cordova-plugin-compat": "1.2.0"
+    "cordova-plugin-compat": "1.2.0",
+    "phonegap-plugin-speech-synthesis": "0.1.1"
 }
 // BOTTOM OF METADATA
 });

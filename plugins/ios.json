@@ -11,6 +11,9 @@
       "MICROPHONE_USAGE_DESCRIPTION": "Listening to speech controlled device feedback",
       "SPEECH_RECOGNITION_USAGE_DESCRIPTION": " ",
       "PACKAGE_NAME": "com.phonegap.voka"
+    },
+    "phonegap-plugin-speech-synthesis": {
+      "PACKAGE_NAME": "com.phonegap.voka"
     }
   },
   "dependent_plugins": {

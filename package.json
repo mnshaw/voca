@@ -10,12 +10,14 @@
     "plugins": {
       "phonegap-plugin-speech-recognition": {
         "MICROPHONE_USAGE_DESCRIPTION": "Listening to speech controlled device feedback"
-      }
+      },
+      "phonegap-plugin-speech-synthesis": {}
     }
   },
   "dependencies": {
     "cordova-browser": "~5.0.1",
+    "cordova-ios": "~4.5.3",
     "phonegap-plugin-speech-recognition": "https://github.com/macdonst/SpeechRecognitionPlugin",
-    "cordova-ios": "~4.5.3"
+    "phonegap-plugin-speech-synthesis": "git+https://github.com/macdonst/SpeechSynthesisPlugin.git"
   }
 }
