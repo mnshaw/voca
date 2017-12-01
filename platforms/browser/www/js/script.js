@@ -164,12 +164,16 @@ $(document).ready(function() {
     });
 
     $(".send").click(function() {
-        alert("send pressed");
         var text = $(".mytext").val();
-        if (text !== ""){
-            insertChat("you", text);              
-            $(".mytext").val('');
-        }
+
+        utterance = new SpeechSynthesisUtterance(text)
+        utterance.lang = 'en-US';
+        speechSynthesis.speak(utterance);
+        $(".mytext").val('');
+        // if (text !== ""){
+        //     insertChat("you", text);              
+        //     $(".mytext").val('');
+        // }
     });
 
     // function send(){ 
