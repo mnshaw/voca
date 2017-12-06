@@ -50,7 +50,7 @@ recognition.onresult = function(event) {
     console.log(deviceResponse);
 
     if (deviceResponse != "") {
-        insertChat("voka", deviceResponse); 
+        insertChat("voka", "Alexa: " + deviceResponse); 
     } 
 };
 
@@ -160,7 +160,7 @@ $(".send").click(function() {
 resetChat();
 
 //-- Print Messages
-// insertChat("voka", "Hello Tom...", 0);  
+insertChat("voka", "Hello, what is your command?", 0);  
 
 
 
