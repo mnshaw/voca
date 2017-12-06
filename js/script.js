@@ -1,5 +1,5 @@
-var voka = {};
-// voka.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
+var voca = {};
+// voca.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
 
 var you = {};
 // you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
@@ -50,8 +50,12 @@ recognition.onresult = function(event) {
     console.log(deviceResponse);
 
     if (deviceResponse != "") {
-        insertChat("voka", "Alexa: " + deviceResponse); 
+        insertChat("voca", "Alexa: " + deviceResponse); 
     } 
+    if (deviceResponse == "") {
+        insertChat("voca", "I can't hear anything! Try moving closer and repeating the command.");
+    }
+    deviceResponse = "";
 };
 
 recognition.onstart = function() { 
@@ -61,16 +65,12 @@ recognition.onstart = function() {
 
 recognition.onspeechend = function() {
     console.log("onspeechend");
-    if (deviceResponse == "") {
-        insertChat("voka", "I can't hear anything! Try moving closer and repeating the command.");
-    }
-    deviceResponse = "";
     console.log('You were quiet for a while so voice recognition turned itself off.');
 }
 
 recognition.onerror = function(event) {
     if(event.error == 'no-speech') {
-        insertChat("voka", "I can't hear anything! Try moving closer and repeating the command."); 
+        insertChat("voca", "I can't hear anything! Try moving closer and repeating the command."); 
         console.log('No speech was detected. Try again.');  
     };
 }
@@ -81,7 +81,7 @@ function insertChat(who, text, time = 0){
     var control = "";
     var date = formatAMPM(new Date());
     
-    if (who == "voka"){
+    if (who == "voca"){
         
         control = '<li style="width:100%">' +
                         '<div class="msj macro">' +
@@ -160,7 +160,7 @@ $(".send").click(function() {
 resetChat();
 
 //-- Print Messages
-insertChat("voka", "Hello, what is your command?", 0);  
+insertChat("voca", "Hello, what is your command?", 0);  
 
 
 
