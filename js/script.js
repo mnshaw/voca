@@ -160,7 +160,7 @@ $(".send").click(function() {
 resetChat();
 
 //-- Print Messages
-insertChat("voca", "Hello, what is your command?", 0);  
+insertChat("voca", "Hello, what would you like to do?", 0);  
 insertChat("voca", "Remember to start your command with 'Alexa,'", 1000);  
 
 
