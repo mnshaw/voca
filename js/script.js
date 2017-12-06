@@ -50,10 +50,10 @@ recognition.onresult = function(event) {
     console.log(deviceResponse);
 
     if (deviceResponse != "") {
-        insertChat("voca", "Alexa: " + deviceResponse); 
+        insertChat("voca", "Alexa says: " + deviceResponse); 
     } 
     if (deviceResponse == "") {
-        insertChat("voca", "I can't hear anything! Try moving closer and repeating the command.");
+        insertChat("voca", "I can't hear anything from Alexa! Try moving closer and repeating the command.");
     }
     deviceResponse = "";
 };
@@ -161,6 +161,7 @@ resetChat();
 
 //-- Print Messages
 insertChat("voca", "Hello, what is your command?", 0);  
+insertChat("voca", "Remember to start your command with 'Alexa,'", 1000);  
 
 
 
